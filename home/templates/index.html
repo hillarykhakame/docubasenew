@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuBase - Document Verification API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .jumbotron {
+            flex-grow: 1;
+            position: relative;
+            background: url(#) no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            height: 100vh; /* Adjust height as needed */
+        }
+        .jumbotron::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 1;
+        }
+        .jumbotron .container {
+            position: relative;
+            z-index: 2;
+        }
+        .footer {
+            background-color: #343a40; /* Retaining black background color */
+            color: #ffffff; /* White text color for contrast */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px; /* Smaller height */
+            line-height: 60px; /* Center text vertically */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">DocuBase</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">API Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Welcome to DocuBase</h1>
+            <p class="lead">Your trusted API for seamless document verification.</p>
+            <hr class="my-4">
+            <p>Start integrating our API into your system for secure and reliable document verification.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2024 DocuBase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

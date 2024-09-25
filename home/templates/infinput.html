@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuBase - Document Input</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #003366;
+            padding: 15px;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        .navbar a:hover {
+            background-color: #0056b3;
+            border-radius: 4px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .alert {
+            transition: opacity 0.5s ease-out;
+        }
+        .alert.fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">DocuBase</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">API Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Document Input Form</h2>
+        <form action="#" method="post">
+            {% csrf_token %}
+
+            <label for="document-name">Document Name</label>
+            <input type="text" id="document-name" name="document-name" required>
+
+            <label for="owner-name">Owner's Name</label>
+            <input type="text" id="owner-name" name="owner-name" required>
+
+            <label for="certificate-number">Certificate Number</label>
+            <input type="text" id="certificate-number" name="certificate-number" required>
+
+            <label for="completion-date">Date of Completion</label>
+            <input type="date" id="completion-date" name="completion-date" required>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if success_message %}
+            <div class="alert alert-success mt-3" role="alert" id="success-alert">
+                {{ success_message }}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        &copy; 2024 DocuBase. All rights reserved.
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var successAlert = document.getElementById('success-alert');
+            if (successAlert) {
+                setTimeout(function() {
+                    successAlert.classList.add('fade-out');
+                }, 3000); // 3 seconds before fading out
+            }
+        });
+    </script>
+</body>
+</html>
